@@ -1,0 +1,42 @@
+﻿@model Insecap.Models.ViewModels.AlumnoViewModel
+@{
+    ViewBag.Title = "Modificar Alumno";
+}
+<h2>Modificar Alumno</h2>
+
+@using (Html.BeginForm("Modificar", "alumno", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-3">
+            @Html.HiddenFor(d => d.ID_Alumno)
+            <div class="form-group">
+                @Html.LabelFor(d => d.Rut)
+                @Html.TextBoxFor(d => d.Rut, "", new { @class = "form-control", @placeholder = "11111111-1" })
+                @Html.ValidationMessageFor(d => d.Rut)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control", @placeholder = "Nombre Apellido" })
+                @Html.ValidationMessageFor(d => d.Nombre)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Fecha_Nacimiento)
+                @Html.EditorFor(d => d.Fecha_Nacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(d => d.Fecha_Nacimiento)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Genero)
+                @Html.TextBoxFor(d => d.Genero, "", new { @class = "form-control", @placeholder = "Género" })
+                @Html.ValidationMessageFor(d => d.Genero)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Curso)
+                @Html.TextBoxFor(d => d.Curso, "", new { @class = "form-control", @placeholder = "Curso" })
+                @Html.ValidationMessageFor(d => d.Curso)
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" name="guardar" value="Guardar" />
+            </div>
+        </div>
+    </div>
+}

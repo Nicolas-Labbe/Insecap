@@ -12,5 +12,6 @@ namespace Insecap.Models.ViewModels
         public string nombre { get; set; }
         public DateTime fecha_nacimiento { get; set; }
         public string genero { get; set; }
+        public string curso { get; set; }
     }
 }

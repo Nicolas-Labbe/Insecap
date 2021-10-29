@@ -6,7 +6,7 @@
 <h2>@ViewBag.Title</h2>
 
 <div class="row" style="padding: 1rem;">
-    <a href="#" class="btn btn-primary">Nuevo</a>
+    <a href="~/Alumno/Nuevo" class="btn btn-primary">Nuevo</a>
 </div>
 <div class="row">
     <div class="col-md-12">
@@ -16,6 +16,9 @@
                 <th>Nombre</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Genero</th>
+                <th>Curso</th>
+                <th></th>
+                <th></th>
             </tr>
             @foreach (var oElemento in Model)
             {
@@ -24,6 +27,9 @@
                     <td>@oElemento.nombre</td>
                     <td>@oElemento.fecha_nacimiento.ToString("dd/MM/yyyy")</td>
                     <td>@oElemento.genero</td>
+                    <td>@oElemento.curso</td>
+                    <td><a class="btn btn-default" href="~/Alumno/Modificar/@oElemento.id_alumno">Modificar</a></td>
+                    <td><a class="btn btn-danger" href="~/Alumno/Eliminar/@oElemento.id_alumno">Eliminar</a></td>
                 </tr>
             }
         </table>
